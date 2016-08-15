@@ -26,7 +26,8 @@
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
-			<?php
+            <?php 
+                
 			if ( is_front_page() && is_home() ) : ?>
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<?php else : ?>
@@ -45,6 +46,13 @@
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'ahtheme' ); ?></button>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 		</nav><!-- #site-navigation -->
+       
+        <div id="extratext"><?php
+            $options = get_option('ah_options_settings');
+            echo $options ['ah_text_field'] . '<br />' ;
+        ?>
+        </div>
+        
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

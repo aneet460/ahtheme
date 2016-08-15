@@ -77,8 +77,10 @@ add_action( 'after_setup_theme', 'ahtheme_setup' );
  */
 
 function load_fonts(){
-        wp_register_style('googleFonts', 'https://fonts.googleapis.com/css?family=Oranienbaum', 'https://fonts.googleapis.com/css?family=Arapey');
-        wp_enqueue_style('googleFonts');
+        wp_register_style('googleFonts', 'https://fonts.googleapis.com/css?family=Oranienbaum');
+        wp_enqueue_style('googleFonts', 'https://fonts.googleapis.com/css?family=Oregano');
+        wp_enqueue_style('googleFonts', 'https://fonts.googleapis.com/css?family=Poiret+One');
+        wp_enqueue_style('googleFonts', 'https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 }
 add_action('wp_print_styles', 'load_fonts');
 
