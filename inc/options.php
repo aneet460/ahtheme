@@ -1,5 +1,9 @@
 <?php
 
+/* 
+    Additional options to customize your theme. 
+*/
+
 function ah_add_submenu(){
     add_submenu_page('themes.php', 'Organize Yourself', 'Theme Options', 'manage_options', 'theme_options', 'my_theme_options_page');
 }
@@ -19,7 +23,7 @@ function ah_settings_init() {
         echo 'Add some text';
     }
     
-    // text box
+    // Add an announcement above your title. 
     add_settings_field('ah_text_field', 'Enter your text here', 'ah_text_field_render', 'theme_options', 'ah_options_page_section');
     
     function ah_text_field_render(){
@@ -30,6 +34,66 @@ function ah_settings_init() {
     <?php 
         
     }
+    
+    // Change the greeting on your home page.
+    
+    add_settings_field(
+        'ah_combo_field',
+        'Your home header here',
+        'ah_combo_field_render',
+        'theme_options',
+        'ah_options_page_section'
+    );
+    
+    function ah_combo_field_render(){
+        
+        $options = get_option('ah_options_settings');
+        ?> 
+    
+        <input type="radio" name="ah_options_settings[ah_combo_field]" <?php 
+        if(isset($options['ah_combo_field'])) 
+        checked($options['ah_combo_field'], 1); ?>
+        value="Hello!" /> <label>Hello!</label> <br /> 
+
+        <input type="radio" name="ah_options_settings[ah_combo_field]" <?php
+        if(isset($options['ah_combo_field']))
+        checked($options['ah_combo_field'], 2); ?>
+        value="Bonjour!" /> <label>Bonjour!</label> <br />
+
+        <input type="text"
+        name="ah_options_settings[ah_combo_field]" value="<?php if(isset($options['ah_combo_field'])) echo $options['ah_combo_field']; ?>" /> 
+         
+  <?php                                                                              
+        
+    }
+    
+    //Change the background colour of footer
+    
+    add_settings_field(
+        'ah_rad_field', 
+        'Select a background colour for your homepage',
+        'ah_rad_field_render',
+        'theme_options',
+        'ah_options_page_section'
+    );
+    
+    function ah_rad_field_render(){
+        $options = get_option('ah_options_settings');
+    ?>
+        
+   <input type="radio" name="ah_options_settings[ah_rad_field]" <?php if(isset($options['ah_rad_field'])) checked($options['ah_rad_field'], 1); ?> value="#5E747F" /> <label>Header Blue</label> <br />
+    
+    <input type="radio" name="ah_options_settings[ah_rad_field]" <?php if(isset($options['ah_rad_field'])) checked($options['ah_rad_field'], 1); ?> value="#a6586a" /> <label>Dusty Pink</label> <br />
+
+     <input type="radio" name="ah_options_settings[ah_rad_field]" <?php if(isset($options['ah_rad_field'])) checked($options['ah_rad_field'], 1); ?> value="#BF4342" /> <label>Rusty Red</label> <br />
+
+    <input type="radio" name="ah_options_settings[ah_rad_field]" <?php if(isset($options['ah_rad_field'])) checked($options['ah_rad_field'], 1); ?> value="#000" /> <label>Midnight</label> <br />
+
+    <?php
+    }
+    
+    
+}
     
     function my_theme_options_page(){
         ?>
@@ -45,5 +109,5 @@ function ah_settings_init() {
     <?php    
         }
 
-    }
+    
 add_action('admin_init', 'ah_settings_init');

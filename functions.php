@@ -77,10 +77,8 @@ add_action( 'after_setup_theme', 'ahtheme_setup' );
  */
 
 function load_fonts(){
-        wp_register_style('googleFonts', 'https://fonts.googleapis.com/css?family=Oranienbaum');
-        wp_enqueue_style('googleFonts', 'https://fonts.googleapis.com/css?family=Oregano');
-        wp_enqueue_style('googleFonts', 'https://fonts.googleapis.com/css?family=Poiret+One');
-        wp_enqueue_style('googleFonts', 'https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+        wp_register_style('googleFonts', 'https://fonts.googleapis.com/css?family=Oranienbaum|Pacifico|Baloo+Da|Bungee+Short|Gravitas+One|Source+Sans+Pro|Poiret+One');
+        wp_enqueue_style('googleFonts');
 }
 add_action('wp_print_styles', 'load_fonts');
 
@@ -152,3 +150,20 @@ require get_template_directory() . '/inc/jetpack.php';
 // Customize options displayed in dashboard. 
 
 require get_stylesheet_directory() . '/inc/options.php'; 
+
+//Adds social media buttons
+require get_stylesheet_directory() . '/inc/customplugin/SocMwidget.php';
+
+add_action( 'init', 'create_post_type' );
+function create_post_type() {
+  register_post_type( 'ah_product',
+    array(
+      'labels' => array(
+        'name' => __( 'Products' ),
+        'singular_name' => __( 'Product' )
+      ),
+      'public' => true,
+      'has_archive' => true,
+    )
+  );
+}

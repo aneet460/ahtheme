@@ -22,7 +22,13 @@
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
+<?php $options = get_option('ah_options_settings'); ?>
 <?php wp_footer(); ?>
+    <style type="text/css">
+        #secondary{
+            background-color: <?php echo $options['ah_rad_field']; ?>
+        }
+</style>
 
 </body>
 </html>
