@@ -275,14 +275,14 @@ textarea {
 	font-size: 1rem;
 	line-height: 1.5;
 }
-
+/* style for the header id */
 #masthead{
     background-color: #000;
     color: azure;
     height: auto;
     width: 100%;
 }
-
+/* style for the announcement text */
 #extratext{
     display: inline-block;
     background-color: #7e8f98;
@@ -304,7 +304,7 @@ h6 {
 p {
 	margin-bottom: 1.5em;
 }
-
+/* formatting for the title of the site */
 .site-title{
     font-size: 5em;
 	margin: 0.67em 0;
@@ -312,7 +312,7 @@ p {
     text-align: center;
    /* text-transform: uppercase; */
 }
-
+/* small line of text as a site description */
 .site-description{ 
     text-align: center;
     font-family: 'baloo da';
@@ -457,16 +457,41 @@ table {
     color: #fff;
 }
 
+/* moves the image on the home page to the left, beside text*/
+
 .homecontent img{
-    width: 45%;
+    width: 30%;
     float: left;
     padding-right: 0.8em;
+    border-radius: 100%;
+    
 }
 
-
+/* style for the home page customizable header text. */
 .greetingtext{
     background-color: #bdbba7;
     text-align: center;
+    font-family: 'poiret one', serif;
+    text-decoration: overline ;
+    font-weight: bold;
+    font-size: 1.52em;
+}
+
+.homeadd {
+    width: 100%;
+    padding: 5px;
+    margin:10px;
+}
+
+.homeadd p{
+    margin: 4em;
+}
+
+.homeadd img{
+    width: 25%;
+    float: left;
+    margin: 10px;
+    padding: 10px;
 }
 
 /*--------------------------------------------------------------
@@ -561,6 +586,8 @@ textarea {
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
+
+/* changes the colour of the sidebar -> located above the footer */
 #secondary{
     background-color: #000;
     width: 100%;
@@ -573,6 +600,8 @@ textarea {
 /*--------------------------------------------------------------
 ## Links
 --------------------------------------------------------------*/
+
+/* style for links */
 a {
 	color: #ADC698;
     display: inline-block;
@@ -691,9 +720,18 @@ a:active {
 	.menu-toggle {
 		display: none;
 	}
+    .main-navigation{
+        margin:0.8em 0 4.5em;
+    }
 	.main-navigation ul {
-		display: block;
+		display: inline-block;
 	}
+    .main-navigation li {
+	float: left;
+	position: relative;
+    margin-left: none;
+    padding: 0 8px;
+}
 }
 
 .site-main .comment-navigation,
@@ -987,4 +1025,3 @@ object {
 .gallery-caption {
 	display: block;
 }
-

@@ -151,8 +151,8 @@ require get_template_directory() . '/inc/jetpack.php';
 
 require get_stylesheet_directory() . '/inc/options.php'; 
 
-//Adds social media buttons
-require get_stylesheet_directory() . '/inc/customplugin/SocMwidget.php';
+/*Adds social media buttons
+require get_stylesheet_directory() . '/inc/customplugin/SocMwidget.php'; */
 
 add_action( 'init', 'create_post_type' );
 function create_post_type() {
