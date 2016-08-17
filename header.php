@@ -24,7 +24,13 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'ahtheme' ); ?></a>
 
-	<header id="masthead" class="site-header" role="banner">
+	 <div id="extratext"><?php
+            $options = get_option('ah_options_settings');
+            echo $options ['ah_text_field'] . '<br />' ;
+        ?>
+        </div>
+    
+    <header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
             <?php 
                 
@@ -47,11 +53,6 @@
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 		</nav><!-- #site-navigation -->
        
-        <div id="extratext"><?php
-            $options = get_option('ah_options_settings');
-            echo $options ['ah_text_field'] . '<br />' ;
-        ?>
-        </div>
         
 	</header><!-- #masthead -->
 
