@@ -5,7 +5,7 @@
 */
 
 function ah_add_submenu(){
-    add_submenu_page('themes.php', 'Organize Yourself', 'Theme Options', 'manage_options', 'theme_options', 'my_theme_options_page');
+    add_submenu_page('themes.php', 'Enhance Yourself', 'Theme Options', 'manage_options', 'theme_options', 'my_theme_options_page');
 }
 add_action('admin_menu', 'ah_add_submenu');
 
@@ -14,17 +14,17 @@ function ah_settings_init() {
     
     add_settings_section(
     'ah_options_page_section',
-    'Add Custom Text',
+    'Change specifics of your theme',
     'ah_options_page_section_callback',
     'theme_options'
     );
     
     function ah_options_page_section_callback(){
-        echo 'Add some text';
+        echo 'Options for Enhancement';
     }
     
     // Add an announcement above your title. 
-    add_settings_field('ah_text_field', 'Enter your text here', 'ah_text_field_render', 'theme_options', 'ah_options_page_section');
+    add_settings_field('ah_text_field', 'Enter an announcement', 'ah_text_field_render', 'theme_options', 'ah_options_page_section');
     
     function ah_text_field_render(){
         $options = get_option('ah_options_settings');
@@ -35,11 +35,11 @@ function ah_settings_init() {
         
     }
     
-    // Change the greeting on your home page.
+    // Change the greeting/title on your home page. Stylized through this option, this is a new way to open your site to viewers.
     
     add_settings_field(
         'ah_combo_field',
-        'Your home header here',
+        'Your stylized home page header',
         'ah_combo_field_render',
         'theme_options',
         'ah_options_page_section'
@@ -67,11 +67,11 @@ function ah_settings_init() {
         
     }
     
-    //Change the background colour of footer
+    //Change the background colour of footer -> actually the sidebar but it's been moved down to the bottom of the page above the footer.
     
     add_settings_field(
         'ah_rad_field', 
-        'Select a background colour for your homepage',
+        'Select a background colour for your menu items that appear at the bottom of the page',
         'ah_rad_field_render',
         'theme_options',
         'ah_options_page_section'
@@ -98,7 +98,7 @@ function ah_settings_init() {
     function my_theme_options_page(){
         ?>
         <form action="options.php" method="post">
-        <h2> Organize Yourself - Theme Options</h2>
+        <h2> Enhance Yourself - Theme Options</h2>
             <?php
                 settings_fields('theme_options');
                 do_settings_sections('theme_options');

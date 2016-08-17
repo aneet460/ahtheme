@@ -7,7 +7,7 @@
         Author: Aneet Hundal  
         Author URI : *
         Version : 1.0
-   */
+   
 
 function fbbutton ($atts, $content = null) {
     
@@ -28,5 +28,5 @@ function fbbutton ($atts, $content = null) {
 </div> '; 
 }
 
-add_shortcode('fbbutton', 'fbbutton');
+add_shortcode('fbbutton', 'fbbutton'); */
 

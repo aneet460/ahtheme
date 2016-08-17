@@ -44,14 +44,14 @@ get_header(); ?>
                 
                 
             </div>
-    <!-- recent posts query--> 
+    <!-- display skills query, all posts should --> 
             
-    <div class="recentposts">
+    <div class="homeadd">
            
-        <h3> Recent Posts</h3>
+        <h3> My Skills </h3>
         
         <?php
-            $args = array('showposts'=> 4, 'category_name'=>'Works', 'order'=>'ASC');
+            $args = array('showposts'=> 4, 'category_name'=>'skills', 'order'=>'ASC');
             $my_query= new WP_Query($args);?>
             
         <?php 
