@@ -733,6 +733,17 @@ a:active {
     margin-left: none;
     padding: 0 8px;
 }
+
+}
+/* navigation links hide under the button and button is centered */
+@media screen and (max-width:595px){
+    .main-navigation ul{
+        display:none;
+    }
+    .menu-toggle{
+        display:block;
+        margin:auto;
+    }
 }
 
 .site-main .comment-navigation,
