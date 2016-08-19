@@ -629,6 +629,7 @@ a:active {
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
+/* changes made to menu in header */
 .main-navigation {
 	height: 2.24em;
     line-height: 2.25em;
@@ -715,7 +716,7 @@ a:active {
 .main-navigation.toggled ul {
 	display: block;
 }
-
+/* changes to menu for responsive */
 @media screen and (min-width: 37.5em) {
 	.menu-toggle {
 		display: none;
@@ -859,24 +860,26 @@ a:active {
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
+
+/*changes in primary are made to the overall page */
 #primary{
     background-color: #eeede5;
     padding: 10%;
     width: 100%;
 }
-
+/* main content area changes*/
 #main{
    padding: 1em;
 } 
 
-.recentposts{
+/*.recentposts{
     clear:both;
 	margin: 1em; 
 	padding-left: 1.5em;
 	width: 25%;
 	text-align: left;    
 }
-
+*/
 
 /*--------------------------------------------------------------
 ## Posts and pages

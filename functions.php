@@ -150,20 +150,3 @@ require get_template_directory() . '/inc/jetpack.php';
 // Customize options displayed in dashboard. 
 
 require get_stylesheet_directory() . '/inc/options.php'; 
-
-/*Adds social media buttons
-require get_stylesheet_directory() . '/inc/customplugin/SocMwidget.php'; */
-
-add_action( 'init', 'create_post_type' );
-function create_post_type() {
-  register_post_type( 'ah_product',
-    array(
-      'labels' => array(
-        'name' => __( 'Products' ),
-        'singular_name' => __( 'Product' )
-      ),
-      'public' => true,
-      'has_archive' => true,
-    )
-  );
-}
